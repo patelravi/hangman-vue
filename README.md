@@ -1,6 +1,6 @@
 # Hangman Game With VueJs & Typescript
 
-You can play this game at vue-hangman.netlify.app
+You can play this game at https://vue-hangman.netlify.app
 
 ## List of valid words are given below.
 
