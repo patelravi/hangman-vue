@@ -58,7 +58,7 @@ export default class HangmanComponent extends Vue {
   }
 
   drawSketch() {
-    const canvas = document.getElementById("sketch") as any;
+    const canvas = this.$refs.sketch as any;
     const context = canvas.getContext("2d");
 
     // Clear old sketch.
