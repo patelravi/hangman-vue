@@ -64,7 +64,7 @@ export default class HangmanComponent extends Vue {
     // Clear old sketch.
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    context.strokeStyle = "black";
+    context.strokeStyle = "#547190";
     context.lineWidth = 10;
     context.beginPath();
     context.moveTo(225, 225);

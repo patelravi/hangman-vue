@@ -25,6 +25,16 @@
         <!-- Right Side -->
         <el-col :xs="24" :sm="24" :md="14" class="right-side">
           <div class="game-running" v-if="hangman.gameEndStatus == null">
+            <!-- Hint -->
+            <el-alert
+              class="hint"
+              title="It's a country name."
+              type="info"
+              :closable="false"
+              show-icon
+            >
+            </el-alert>
+
             <!-- Game Status -->
             <div class="game-status">
               <div

@@ -8,176 +8,184 @@ $dot-size: 8px;
 $dot-space: 22px;
 
 #hangman-page {
-    background:
-        linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-        linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-        $dot-color;
-    background-size: $dot-space $dot-space;
-    min-height: 100vh;
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+  min-height: 100vh;
 
-    .container {
+  .container {
+    .start-game {
+      text-align: center;
 
-        .start-game {
+      @media #{$small-screen} {
+        padding-top: 10vh;
+      }
+
+      .lets-play {
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 60px;
+        color: purple;
+      }
+    }
+
+    .game-container {
+      .left-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+
+        @media #{$small-screen} {
+          height: auto;
+          padding-top: 2vh;
+        }
+      }
+
+      .right-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+
+        @media #{$small-screen} {
+          height: auto;
+        }
+
+        .game-running {
+          text-align: center;
+
+          // padding-top: 5vh;
+
+          .game-status {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .character {
+              width: 50px;
+              height: 30px;
+              text-align: center;
+              font-size: 45px;
+              line-height: 30px;
+              color: #4d608e;
+
+              @media #{$small-screen} {
+                width: 20px;
+                height: 30px;
+                font-size: 20px;
+                line-height: 40px;
+              }
+            }
+
+            .underscore {
+              border-bottom: 5px solid orange;
+              margin-left: 5px;
+              margin-right: 5px;
+
+              @media #{$small-screen} {
+                margin-left: 3px;
+                margin-right: 3px;
+                border-bottom: 3px solid orange;
+              }
+            }
+          }
+
+          .hint {
+            background: #46c346;
+            color: white;
+            justify-content: center;
+            width: auto;
+            display: inline-flex;
+            margin-bottom: 10vh;
+
+            @media #{$small-screen} {
+              margin-bottom: 5vh;
+            }
+          }
+
+          .chars-container {
+            margin-top: 7vh;
+            width: 600px;
             text-align: center;
 
             @media #{$small-screen} {
-                padding-top: 20vh;
+              width: 95%;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 3vh;
             }
 
-            .lets-play {
-                height: 40vh;
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-                font-size: 60px;
-                color: purple;
+            .character {
+              width: 60px;
+              margin: 10px;
+              display: inline-block;
+              padding: 10px;
+              font-size: 25px;
+              line-height: 40px;
 
+              @media #{$small-screen} {
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+                font-size: 15px;
+                line-height: 30px;
+                margin: 7px;
+              }
             }
+          }
         }
 
-        .game-container {
+        .game-ended {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          align-content: center;
+          flex-direction: column;
+          min-height: 100vh;
 
-            .left-side {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 90vh;
+          @media #{$small-screen} {
+            min-height: 50vh;
+            padding-bottom: 20px;
+          }
 
-                @media #{$small-screen} {
-                    height: auto;
-                    padding-top: 5vh;
-                }
+          .message {
+            font-size: 50px;
+            line-height: 70px;
+            margin-bottom: 10vh;
+            text-align: center;
+            color: #547190;
+
+            @media #{$small-screen} {
+              font-size: 20px;
+              line-height: 30px;
+              margin-top: 3vh;
+              margin-bottom: 3vh;
             }
+          }
 
-            .right-side {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                height: 100vh;
-
-                @media #{$small-screen} {
-                    height: auto;
-                }
-
-                .game-running {
-                    text-align: center;
-
-                    padding-top: 5vh;
-
-                    .game-status {
-
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-
-                        .character {
-                            width: 50px;
-                            height: 30px;
-                            text-align: center;
-                            font-size: 45px;
-                            line-height: 30px;
-                            color: #4d608e;
-
-                            @media #{$small-screen} {
-                                width: 20px;
-                                height: 30px;
-                                font-size: 20px;
-                                line-height: 40px;
-                            }
-
-                        }
-
-                        .underscore {
-                            border-bottom: 5px solid orange;
-                            margin-left: 5px;
-                            margin-right: 5px;
-
-                            @media #{$small-screen} {
-                                margin-left: 3px;
-                                margin-right: 3px;
-                                border-bottom: 3px solid orange;
-
-                            }
-                        }
-                    }
-
-                    .chars-container {
-                        margin-top: 60px;
-                        width: 600px;
-                        text-align: center;
-
-                        @media #{$small-screen} {
-                            width: 95%;
-                            margin-left: auto;
-                            margin-right: auto;
-                        }
-
-                        .character {
-                            width: 60px;
-                            margin: 10px;
-                            display: inline-block;
-                            padding: 10px;
-                            font-size: 25px;
-                            line-height: 40px;
-
-                            @media #{$small-screen} {
-                                width: 40px;
-                                height: 40px;
-                                padding: 5px;
-                                font-size: 15px;
-                                line-height: 30px;
-                                margin: 7px;
-
-                            }
-                        }
-                    }
-                }
-
-                .game-ended {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    align-content: center;
-                    flex-direction: column;
-                    min-height: 100vh;
-
-
-                    @media #{$small-screen} {
-                        min-height: 50vh;
-                        padding-bottom: 20px;
-                    }
-
-                    .message {
-                        font-size: 50px;
-                        line-height: 70px;
-                        margin-bottom: 10vh;
-                        text-align: center;
-
-                        @media #{$small-screen} {
-                            font-size: 20px;
-                            line-height: 30px;
-                            margin-top: 3vh;
-                            margin-bottom: 3vh;
-                        }
-
-
-                    }
-
-                    img {
-                        border-radius: 10px;
-                        width: 90%;
-                    }
-                }
-            }
+          img {
+            border-radius: 10px;
+            width: 90%;
+          }
         }
-
-        .button-play {
-            margin-top: 10vh;
-            padding: 25px 40px;
-            font-size: 30px;
-            margin-bottom: 5vh;
-
-        }
+      }
     }
+
+    .button-play {
+      margin-top: 10vh;
+      padding: 25px 40px;
+      font-size: 30px;
+      margin-bottom: 5vh;
+    }
+  }
 }

@@ -1,24 +1,19 @@
-# hangman-vue
+# Hangman Game With VueJs & Typescript
 
-## Project setup
-```
-npm install
-```
+You can play this game at vue-hangman.netlify.app
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## List of valid words are given below.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Bahrain,Bangladesh, Bolivia, Botswana, Brazil, Canada, Chad, Chile, China, Colombia
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Frameworks/Packages Used:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- VueJs
+- Typescript - with class type vue components
+- Element UI (https://element.eleme.io/#/en-US)
+
+## How to setup on local machine?
+
+1. Clone repo to local machine.
+2. Install npm dependencies using `npm install`.
+3. Start the game using `npm run serve`.
